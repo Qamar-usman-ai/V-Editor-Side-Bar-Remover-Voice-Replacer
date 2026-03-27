@@ -1,10 +1,9 @@
 import streamlit as st
-from moviepy.editor import VideoFileClip
-from moviepy.video.fx.all import crop
 import edge_tts
 import asyncio
 import os
-
+from moviepy import VideoFileClip
+import moviepy.video.fx as fx  # Access crop via fx.crop
 # Helper to generate English TTS
 async def generate_voice(text, output_path):
     communicate = edge_tts.Communicate(text, "en-US-GuyNeural")
